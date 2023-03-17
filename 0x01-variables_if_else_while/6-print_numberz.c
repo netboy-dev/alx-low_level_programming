@@ -4,11 +4,13 @@
  * Return: 0 (success)
  */                                                                         int main(void)
 {
-        int i;
-                                                                                    for (i = 0; i < 10; i++)
-        {
-                putchar("%i", i);
-        }
-        putchar("\n");
-        return (0);
+	int c = 0;
+
+	while (c < 10)
+	{
+		putchar(48 + c);
+		c++;
+	}
+	putchar('\n');
+	return (0);
 }
