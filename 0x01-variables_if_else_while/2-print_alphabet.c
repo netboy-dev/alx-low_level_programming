@@ -1,9 +1,9 @@
 #include <stdio.h>
-int main() 
+int main()
 {
-	char c;
+        char c;
 
-	for (c = 'a'; c <= 'z'; ++c)
-		printf("%c", c);
+        for (c = 'a'; c <= 'z'; ++c)
+		printf("%c ", c);
 	return 0;
 }
