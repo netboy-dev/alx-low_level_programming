@@ -1,5 +1,5 @@
 #include <stdio.h>
-**/
+/**
  *Description: using the main function
  *Return: 0
  */
