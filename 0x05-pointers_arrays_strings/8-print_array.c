@@ -1,11 +1,15 @@
 #include"main.h"
 #include <stdio.h>
 /**
- * print_array - Prints n elements of an array of integers, followed by * @a: Pointer to the first element of the array.
- * @n: Number of elements of the array to be printed.
+ * print_array - main function.
+ * @a: Pointer, the array to print.
+ * @n: The array lenght.
  *
- * Return: void.
+ * Description: This function prints elements of an array of integers.
+ *
+ * Return: none.
  */
+ 
 void print_array(int *a, int n)
 {
 	int i;
