@@ -1,43 +1,37 @@
-/**
- * main - Entry point
- *
- * Description: Generates a random valid password for 101-crackme
- * Return: Always 0 (Success)
- */
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 
 /**
- * main - Entry point
+ * main - Generates random passwords for 101-crackme
  *
- * Description: Generates a random valid password for 101-crackme
- * Return: Always 0 (Success)
+ * Return: Always 0
  */
-
 int main(void)
 {
-        int i, sum, n;
-        char password[84];
+        int i, sum, rand_num;
+        char password[100];
 
-        srand(time(0));
+        srand(time(NULL)); /* Set random seed */
 
         sum = 0;
-        for (i = 0; sum < 2772; i++)
+        i = 0;
+
+        /* Generate random printable ASCII characters */
+        while (sum < 2772 - 122)
         {
-                n = rand() % 62;
-                if (n < 10)
-                        password[i] = '0' + n;
-                else if (n < 36)
-                        password[i] = 'A' + n - 10;
-                else
-                        password[i] = 'a' + n - 36;
-                sum += password[i];
+                rand_num = rand() % 94 + 32;
+                password[i] = (char)rand_num;
+                sum += rand_num;
+                i++;
         }
 
-        password[i] = 2772 - sum;
-        printf("%s", password);
+        password[i] = (char)(2772 - sum);
+        i++;
+
+        password[i] = '\0'; /* Null-terminate the password string */
+
+        printf("%s", password); /* Print the generated password */
 
         return (0);
 }
