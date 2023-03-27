@@ -16,4 +16,3 @@ void _puts(char *str)
     write(STDOUT_FILENO, str, len);
     write(STDOUT_FILENO, "\n", 1);
 }
-
