@@ -1,15 +1,26 @@
-section .data
-    message db "Hello, Holberton!", 10, 0
+; File: 101-hello_holberton.asm
+; Auth: Gedeon Obae Gekonge
+; Desc: 64-bit assembly program that prints
+;       Hello, Holberton followed by a new line.
+
+extern printf
 
 section .text
-    global main
-    extern printf
+   global main
 
 main:
-    push message
-    call printf
-    add rsp, 8
+   push rbp
 
-    xor eax, eax
-    ret
+   mov rdi,fmt
+   mov rsi,msg
+   mov rax,0
+   call printf
 
+   pop rbp
+
+   mov rax,0
+   ret
+
+section .data
+   msg: db "Hello, Holberton", 0
+   fmt: db "%s", 10, 0
