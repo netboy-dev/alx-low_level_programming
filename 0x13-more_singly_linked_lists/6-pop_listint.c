@@ -28,4 +28,4 @@ int pop_listint(listint_t **head)
 	}
 	else
 		return (0);
-}}
+}

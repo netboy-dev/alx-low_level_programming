@@ -1,22 +1,36 @@
 #include "lists.h"
 
 /**
- * free_listint2 - Frees a listint_t list and sets the head to NULL.
+ * free_listint2 - frees memory previously allocated to
+ * a struct list type listint_t, also sets head to NULL
  *
- * @head: Double pointer to the head node of the list.
+ * @head: double pointer to the first member of a singly linked list
+ * of structs of type listint_s
  */
 
 void free_listint2(listint_t **head)
 {
-	listint_t *current_node;
-	if (head == NULL || *head == NULL)
-		return;
-	while (*head != NULL)
-	{
-		current_node = *head;
-		*head = (*head)->next;
-		free(current_node);
-	}
-	*head = NULL;
-}
+	listint_t *temp;
+/*
+ * frees from beginning of list. do recursive solutions
+ * from end of list exist?
+ */
 
+	if (head == NULL)
+		return;
+
+	while (*head)
+	{
+		if ((*head)->next)
+		{
+			temp = *head;
+			*head = (*head)->next;
+			free(temp);
+		}
+		else
+		{
+			free(*head);
+			*head = NULL;
+		}
+	}
+}
